@@ -1,0 +1,59 @@
+.integration {
+	&-container {
+		margin-top: 150px;
+
+		.subtitle {
+			max-width: 448px;
+		}
+
+		.integration-partners {
+			@include display(space-between);
+			align-items: start;
+
+			&-column {
+				@include display(space-between);
+				flex-direction: column;
+				margin-right: 10px;
+
+				&:last-child {
+					margin: 0;
+				}
+
+				ul {
+					list-style-type: none;
+					display: flex;
+					flex-direction: column;
+					align-items: start;
+					min-height: 180px;
+				}
+
+				//выбираем все не титульные лишки
+				ul :not([class="partners-title"]) {
+					color: red;
+					filter: invert(56%) sepia(6%) saturate(6%) hue-rotate(337deg)
+						brightness(89%) contrast(86%);
+					height: 30px;
+					width: 120px;
+					margin: 5px 0;
+					@include display(start);
+					align-items: center;
+
+					img {
+						height: auto;
+						width: max-content;
+					}
+
+					&:hover {
+						filter: none;
+					}
+				}
+
+				//титулки
+				ul [class="partners-title"] {
+					@include fonts("Inter", 500, 18px);
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+}

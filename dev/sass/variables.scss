@@ -1,0 +1,23 @@
+$first-screen-bg-color: #25262C;
+$black-color: #0E1014;
+$blue-color: #4077F3;
+$dark-blue-color: #3263d6;
+$light-white-color: #E4E5EA;
+$white-color: #fff;
+$purple-color: #833AB4;
+$yellow-color: #FCB045;
+$red-color: red;
+$dark-grey-color: #656566;
+$grey-color: grey;
+
+
+@mixin display($jc) {
+    display: flex;
+    justify-content: $jc;
+}
+
+@mixin fonts($family, $weight, $size) {
+    font-family: $family;
+    font-weight: $weight;
+    font-size: $size;
+}

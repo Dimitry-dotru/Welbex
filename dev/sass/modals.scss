@@ -1,0 +1,50 @@
+//? Modal Window
+.modal {
+	position: fixed;
+	transition: 0.3s;
+	top: 0;
+	left: 0;
+	background-color: #0e101489;
+	z-index: 11;
+	@include display(center);
+	display: none;
+	opacity: 0;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+
+	&-container {
+		position: relative;
+		@include display(center);
+		align-items: start;
+		flex-direction: column;
+		padding-left: 50px;
+		background-color: $black-color;
+		border: 1px solid $first-screen-bg-color;
+		min-height: 413px;
+		max-width: 950px;
+		width: 100%;
+
+		.modal-btn-close {
+			position: absolute;
+			cursor: pointer;
+			right: 25px;
+			top: 25px;
+			width: 20px;
+			height: 20px;
+			background-image: url(assets/img/modal-close.svg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		h2 {
+			margin-bottom: 50px;
+		}
+
+		h3 {
+			@include fonts("Inter", 300, 18px);
+			max-width: 70%;
+		}
+	}
+}

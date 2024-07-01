@@ -1,0 +1,60 @@
+.sertificates {
+	position: relative;
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		display: block;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	&::after {
+		width: 386px;
+		height: 698px;
+		right: 0;
+		top: -250px;
+		background-image: url(assets/img/sertificates/dots.png);
+	}
+
+	&::before {
+		width: 60px;
+		height: 60px;
+		right: 300px;
+		top: 200px;
+		background-image: url(assets/img/first-screen/purple-ball.png);
+	}
+
+	&-container {
+		margin-top: 150px;
+
+		.subtitle {
+			&::after {
+				content: "Вы можете доверить нам решение своих задач! Нажмите и читайте.";
+			}
+		}
+
+		.sertificates-logos {
+			@include display(space-between);
+			width: 100%;
+			max-width: 840px;
+
+			.card {
+				width: 195px;
+				min-height: 105px;
+				background: linear-gradient(
+					152.66deg,
+					rgba(255, 246, 233, 0.1) -0.56%,
+					rgba(26, 29, 35, 0.1) 30.32%,
+					rgba(26, 29, 35, 0.1) 59.86%,
+					rgba(26, 29, 35, 0.2) 89.45%,
+					rgba(26, 29, 35, 0.2) 115.41%
+				);
+				@include display(center);
+				align-items: center;
+			}
+		}
+	}
+}

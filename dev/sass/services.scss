@@ -1,0 +1,83 @@
+.services {
+	&-container {
+		margin-top: 150px;
+
+		.table {
+			.row {
+				@include display(space-between);
+				margin-top: 30px;
+
+				.card {
+					background-color: $black-color;
+					transition: 0.3s;
+					max-width: 360px;
+					width: 100%;
+					min-height: 264px;
+					position: relative;
+					overflow: hidden;
+					border: 1px solid $first-screen-bg-color;
+					background: linear-gradient(
+						162.2deg,
+						rgba(255, 246, 233, 0.1) -1.42%,
+						rgba(26, 29, 35, 0.1) 25.01%,
+						rgba(26, 29, 35, 0.1) 50.31%,
+						rgba(26, 29, 35, 0.2) 75.65%,
+						rgba(26, 29, 35, 0.2) 97.87%
+					);
+
+					.icon {
+						transition: 0.3s;
+						margin-top: 20px;
+						margin-left: 20px;
+						width: 70px;
+						height: 70px;
+						background-image: url(assets/img/services/1_block.jpg);
+					}
+
+					.movable {
+						transition: 0.3s;
+						top: 120px;
+						position: absolute;
+
+						h3 {
+							@include fonts("Inter", 500, 18px);
+							color: $white-color;
+							margin-bottom: 20px;
+							padding: 0 20px;
+						}
+
+						h4 {
+							padding: 0 20px;
+							@include fonts("Montserrat", 400, 16px);
+							margin-bottom: 63px;
+						}
+
+						button {
+							width: 100%;
+							max-width: 360px;
+							outline: 0;
+							border: 0;
+							min-height: 61px;
+							cursor: pointer;
+							background-color: $blue-color;
+						}
+					}
+
+					&:hover {
+						border: 1px transparent solid;
+						border-image: linear-gradient(-90deg, #dba6ff, #fd878780, #ffd8a080)
+							1;
+
+						.icon {
+							transform: translateY(-95px);
+						}
+
+						.movable {
+							top: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,193 @@
+.first-screen {
+	background: no-repeat center url(assets/img/first-screen/polyhedron.png);
+	background-size: contain;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	&::before {
+		z-index: 3;
+		height: 46px;
+		width: 46px;
+		bottom: 50px;
+		left: 41.5%;
+		background-image: url(assets/img/first-screen/yellow-ball.png);
+	}
+
+	&::after {
+		width: 58px;
+		height: 58px;
+		bottom: 98px;
+		left: 60%;
+		background-image: url(assets/img/first-screen/red-ball.png);
+	}
+
+	&-container {
+		@include display(space-between);
+		align-items: center;
+		height: 100%;
+
+		//!LEFT PART
+		.earn {
+			height: 372px;
+
+			h2,
+			h3 {
+				position: relative;
+				z-index: 3;
+			}
+
+			h2 {
+				@include fonts("Inter", 400, 48px);
+				max-width: 362px;
+
+				.text-gradient {
+					font-weight: 900;
+				}
+			}
+
+			h3 {
+				@include fonts("Montserrat", 400, 18px);
+				max-width: 275px;
+				width: 100%;
+				margin-top: 30px;
+			}
+
+			//! FROSTED ELEMENT
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 100vh;
+				z-index: 2;
+				width: 43%;
+				border-right: 2px solid;
+				border-image: linear-gradient(
+						to bottom,
+						#dba6ffd6,
+						#fd87876f,
+						#ffd7a04b,
+						#ffffff00
+					)
+					1;
+				backdrop-filter: blur(5px);
+			}
+
+			//*BALLS,GLOWING
+			&::after {
+				content: "";
+				background-image: url(assets/img/first-screen/red-ball.png);
+				background-position: center;
+				background-size: contain;
+				position: absolute;
+				height: 93px;
+				width: 93px;
+				left: 35%;
+				top: 81px;
+				z-index: 1;
+			}
+		}
+
+		//!RIGHT PART
+		.free-cons {
+			height: 372px;
+			position: relative;
+			z-index: 3;
+			text-align: right;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+
+			h3 {
+				@include fonts("Inter", 700, 18px);
+				max-width: 291px;
+
+				span {
+					text-transform: uppercase;
+				}
+			}
+
+			.bonus {
+				margin-top: 10px;
+				display: flex;
+				flex-direction: column;
+
+				&-row {
+					display: flex;
+				}
+
+				&-cell {
+					max-width: 160px;
+					margin-top: 30px;
+					margin-left: 30px;
+
+					&:first-child {
+						margin-left: 0;
+					}
+
+					h4 {
+						@include fonts("Inter", 500, 18px);
+						text-transform: uppercase;
+					}
+
+					h5 {
+						@include fonts("Montserrat", 400, 16px);
+					}
+				}
+			}
+
+			.get-consult {
+				width: 100%;
+				max-width: 262px;
+				min-height: 61px;
+				background-color: $blue-color;
+				margin-top: 60px;
+				align-items: center;
+				@include display(center);
+				@include fonts("Inter", 500, 16px);
+
+				&:hover {
+					box-shadow: 0px 0px 40px 0px rgba(64, 119, 243, 0.47);
+				}
+			}
+		}
+
+		//*BALLS,GLOWING
+		&::after,
+		&::before {
+			content: "";
+			opacity: 0.1;
+			filter: blur(120px);
+			position: absolute;
+			border-radius: 100%;
+		}
+
+		&::after {
+			background-color: $yellow-color;
+			transform: translate(-50%, -50%);
+			height: 500px;
+			width: 500px;
+			top: 90%;
+			left: 57%;
+		}
+
+		&::before {
+			background-color: $red-color;
+			transform: translate(0, -50%);
+			height: 300px;
+			width: 300px;
+			top: 50%;
+			left: -100px;
+		}
+	}
+}

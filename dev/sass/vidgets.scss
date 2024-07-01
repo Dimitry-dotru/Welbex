@@ -1,0 +1,140 @@
+.vidgets {
+	&-container {
+		margin-top: 170px;
+
+		.subtitle {
+			max-width: 253px;
+		}
+
+		.subtitle::after {
+			content: "20 виджетов помогут автоматизировать ваш отдел.";
+		}
+
+		.box {
+			border: 1px solid $first-screen-bg-color;
+			width: 100%;
+			min-height: 506px;
+			@include display(space-between);
+
+			.selector {
+				width: 100%;
+				max-width: 359px;
+				max-height: 649px;
+				overflow: scroll;
+				display: flex;
+				flex-direction: column;
+
+				.card {
+					cursor: pointer;
+					min-height: 78px;
+					display: flex;
+					align-items: center;
+					padding-left: 30px;
+					background: linear-gradient(
+						152.66deg,
+						rgba(26, 29, 35, 0.1) -0.56%,
+						rgba(26, 29, 35, 0.1) 30.32%,
+						rgba(26, 29, 35, 0.1) 59.86%,
+						rgba(26, 29, 35, 0.2) 89.45%,
+						rgba(26, 29, 35, 0.2) 115.41%
+					);
+
+					&:hover {
+						border: 1px solid #656566;
+
+						.img {
+							opacity: 1;
+						}
+
+						h6 {
+							color: $white-color;
+						}
+					}
+
+					&.active {
+						background: linear-gradient(
+							95.49deg,
+							rgba(255, 246, 233, 0.1) 8.22%,
+							rgba(26, 29, 35, 0.1) 75.4%
+						);
+
+						.img {
+							opacity: 1;
+						}
+
+						h6 {
+							color: $white-color;
+						}
+					}
+
+					.img {
+						width: 30px;
+						height: 30px;
+						margin-right: 20px;
+						opacity: 0.3;
+					}
+
+					h6 {
+						@include fonts("Inter", 500, 18px);
+						color: #656566;
+					}
+				}
+			}
+
+			.content {
+				width: 100%;
+				padding: 60px 0 50px 80px;
+
+				.container {
+					@include display(space-between);
+					flex-direction: column;
+					height: 100%;
+
+					h4 {
+						@include fonts("Inter", 500, 18px);
+						margin-bottom: 20px;
+					}
+
+					ul {
+						display: flex;
+						flex-wrap: wrap;
+
+						li {
+							@include fonts("Montserrat", 400, 18px);
+						}
+					}
+
+					.capabilities ul {
+						width: calc(100% - 20px);
+
+						li {
+							max-width: 313px;
+
+							&:nth-child(2) {
+								margin-left: 80px;
+							}
+						}
+					}
+
+					.try-it .row {
+						padding-right: 60px;
+						@include display(space-between);
+						align-items: end;
+
+						ul {
+							flex-direction: column;
+
+							li {
+								max-width: 286px;
+
+								&:first-child {
+									margin-bottom: 10px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
